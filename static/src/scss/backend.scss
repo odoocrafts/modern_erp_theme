@@ -66,6 +66,109 @@
     color: var(--met-ink);
 }
 
+// Bootstrap compiles these to white / $o-view-background-color. The variable
+// rules above lose to those selectors, so the chip, tab bar, and search stay
+// light even when the canvas token is dark.
+.o_control_panel .o_breadcrumb > .breadcrumb,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a,
+.o_control_panel .o_breadcrumb > .breadcrumb .o_back_button,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn:hover,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn:focus,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn:focus-visible,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn:active,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a:hover,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a:focus,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a:focus-visible,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a:active {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a:hover,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a:focus,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a:focus-visible,
+.o_control_panel .o_breadcrumb > .breadcrumb .breadcrumb-item > a:active,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn:hover,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn:focus,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn:focus-visible,
+.o_control_panel .o_breadcrumb > .breadcrumb .btn:active {
+    color: var(--met-accent);
+}
+
+.o_control_panel .o_searchview {
+    --SearchBar-background-color: var(--met-menu);
+    background-color: var(--met-menu);
+    color: var(--met-ink);
+}
+
+.o_web_client .o_form_view .o_form_renderer,
+.o_web_client .o_form_view .o_form_sheet_bg,
+.o_web_client .o_form_view.o_xxl_form_view .o_form_sheet_bg {
+    background-color: var(--met-canvas);
+    color: var(--met-ink);
+}
+
+.o_web_client .o_form_view .o_notebook .nav {
+    background-color: var(--met-menu);
+}
+
+.o_web_client .o_form_view .o_notebook .nav-link.active,
+.o_web_client .o_form_view .o_notebook .nav-link.active:hover,
+.o_web_client .o_form_view .o_notebook .nav-link.active:focus,
+.o_web_client .o_form_view .o_notebook .nav-link.active:active {
+    background-color: var(--met-menu);
+    color: var(--met-ink);
+    border-bottom-color: var(--met-menu);
+}
+
+.o_web_client .o-mail-Chatter-top {
+    background-color: var(--met-canvas);
+}
+
+.o_kanban_view .o_kanban_renderer {
+    --Kanban-background: var(--met-canvas);
+    --KanbanGroup-background: var(--met-canvas);
+    background-color: var(--met-canvas);
+    color: var(--met-ink);
+}
+
+.o_kanban_view .o_kanban_renderer .o_kanban_record > div:not(.o_dropdown_kanban),
+.o_kanban_view .o_kanban_renderer .o_kanban_quick_create {
+    background-color: var(--met-menu);
+    color: var(--met-ink);
+    border-color: var(--met-line);
+}
+
+.o_web_client .o_kanban_view .o_kanban_renderer .o_kanban_header,
+.o_web_client .o_kanban_view .o_kanban_renderer .o_column_title,
+.o_web_client .o_kanban_renderer .o_kanban_record .o_kanban_record_title,
+.o_web_client .o_kanban_renderer .o_kanban_record .o_kanban_record_subtitle {
+    color: var(--met-ink);
+}
+
+// .text-900 compiles a near-black color with !important (column totals,
+// stage names). Follow the theme ink so the same rule stays dark in light
+// mode and light in dark mode.
+.o_web_client .text-900 {
+    --color: var(--met-ink);
+    color: var(--met-ink) !important;
+}
+
+.o_list_view .o_list_renderer {
+    --ListRenderer-thead-bg-color: var(--met-canvas);
+    color: var(--met-ink);
+}
+
+.o_list_view .o_list_renderer .o_list_table {
+    --table-bg: var(--met-menu);
+    color: var(--met-ink);
+    background-color: var(--met-menu);
+}
+
 .o_kanban_view .o_kanban_record:not(.o_kanban_ghost) {
     background: var(--met-menu);
     color: var(--met-ink);

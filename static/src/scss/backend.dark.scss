@@ -17,3 +17,167 @@
     --NavBar-entry-color--hover: #ffffff;
     --NavBar-brand-color: #f5f5f7;
 }
+
+// Entry fill is compiled from $o-navbar-background. Override the variable
+// Odoo already reads so sections stay on the dark bar. Do not change
+// positioning, z-index, or backdrop-filter.
+.o_main_navbar {
+    --NavBar-entry-backgroundColor: transparent;
+    --NavBar-entry-backgroundColor--hover: var(--met-hover);
+    --NavBar-entry-backgroundColor--focus: var(--met-hover);
+    --NavBar-entry-backgroundColor--active: var(--met-hover);
+}
+
+.o_web_client .dropdown-menu,
+.o_web_client .o-dropdown--menu {
+    background-color: var(--met-menu);
+    color: var(--met-ink);
+}
+
+.o_web_client .dropdown-menu .dropdown-item,
+.o_web_client .o-dropdown--menu .dropdown-item {
+    color: var(--met-ink);
+}
+
+.o_web_client .dropdown-menu .dropdown-item:hover,
+.o_web_client .dropdown-menu .dropdown-item:focus,
+.o_web_client .o-dropdown--menu .dropdown-item:hover,
+.o_web_client .o-dropdown--menu .dropdown-item:focus {
+    background-color: var(--met-hover);
+    color: var(--met-ink);
+}
+
+.o_web_client .o_field_widget input::placeholder,
+.o_web_client .o_field_widget textarea::placeholder,
+.o_web_client .o_searchview_input::placeholder {
+    color: var(--met-muted);
+    opacity: 1;
+}
+
+// Compiled heading color is near-black, so list headers disappear on the dark canvas.
+.o_web_client .o_list_renderer .o_list_table thead th,
+.o_web_client .o_list_renderer .o_list_table thead th .o_list_sortable {
+    color: var(--met-muted);
+}
+
+// Secondary controls are compiled gray-300. Keep them readable on the dark bar
+// without flattening the active view switcher.
+.o_web_client .btn-secondary:not(.active):not(:disabled) {
+    background-color: var(--met-menu);
+    border-color: var(--met-line);
+    color: var(--met-ink);
+}
+
+.o_web_client .btn-secondary:not(.active):not(:disabled):hover,
+.o_web_client .btn-secondary:not(.active):not(:disabled):focus {
+    background-color: var(--met-hover);
+    border-color: var(--met-line);
+    color: var(--met-ink);
+}
+
+.o_web_client .btn-secondary:disabled:not(.o_arrow_button),
+.o_web_client .btn-secondary:disabled:not(.o_arrow_button):hover {
+    background-color: var(--met-menu);
+    border-color: var(--met-line);
+    color: var(--met-muted);
+}
+
+.o_web_client .btn-outline-secondary {
+    color: var(--met-muted);
+    border-color: var(--met-line);
+    background-color: transparent;
+}
+
+.o_web_client .btn-outline-secondary:hover,
+.o_web_client .btn-outline-secondary:focus {
+    color: var(--met-ink);
+    border-color: var(--met-line);
+    background-color: var(--met-hover);
+}
+
+.o_web_client .o_control_panel .btn-light,
+.o_web_client .o_control_panel .btn-light:hover,
+.o_web_client .o_control_panel .btn-light:focus,
+.o_web_client .o_control_panel .btn-light:active {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--met-ink);
+}
+
+.o_web_client .o_control_panel .btn-light:hover,
+.o_web_client .o_control_panel .btn-light:focus {
+    background-color: var(--met-hover);
+}
+
+// Column gears, the breadcrumb cog, and "Add column" stay on the dark bar
+// without a white chip.
+.o_web_client .o_kanban_renderer .o_kanban_header .dropdown-toggle,
+.o_web_client .o_kanban_renderer .o_kanban_header .fa,
+.o_web_client .o_control_panel_breadcrumbs_actions .btn,
+.o_web_client .o_control_panel .o_cp_action_menus > .btn {
+    color: var(--met-muted);
+    background-color: transparent;
+}
+
+.o_web_client .o_kanban_renderer .o_kanban_add_column,
+.o_web_client .o_kanban_renderer .o_kanban_add_column:hover,
+.o_web_client .o_kanban_renderer .o_kanban_add_column:focus {
+    background-color: transparent;
+    border-color: var(--met-line);
+    color: var(--met-muted);
+}
+
+.o_web_client .o-mail-Chatter-top.shadow-sm {
+    background-image: none;
+}
+
+// Stage arrows are compiled btn-secondary (gray-300) with a white chevron
+// notch ($o-view-background-color). Keep the current stage on the accent.
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.btn-secondary:not(.o_arrow_button_current) {
+    background-color: var(--met-menu);
+    border-color: var(--met-line);
+    color: var(--met-ink);
+}
+
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.btn-secondary:not(.o_arrow_button_current):hover,
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.btn-secondary:not(.o_arrow_button_current):focus {
+    background-color: var(--met-hover);
+    border-color: var(--met-line);
+    color: var(--met-ink);
+}
+
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):disabled:not(.o_arrow_button_current),
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):disabled:not(.o_arrow_button_current):hover,
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):disabled:not(.o_arrow_button_current):focus {
+    color: var(--met-ink);
+}
+
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_arrow_button_current):before {
+    border-left-color: var(--met-canvas);
+}
+
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_arrow_button_current):after {
+    border-left-color: var(--met-menu);
+}
+
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_arrow_button_current):hover:after,
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button:not(.d-none):not(.o_arrow_button_current):focus:after {
+    border-left-color: var(--met-hover);
+}
+
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.btn-secondary.o_arrow_button_current:disabled,
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.btn-secondary.o_arrow_button_current:disabled:hover,
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.btn-secondary.o_arrow_button_current:disabled:focus {
+    background-color: var(--met-accent);
+    border-color: var(--met-accent);
+    color: #ffffff;
+}
+
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.o_arrow_button_current:disabled:before {
+    border-left-color: var(--met-canvas);
+}
+
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.o_arrow_button_current:disabled:after,
+.o_web_client .o_form_view .o_field_statusbar > .o_statusbar_status > .o_arrow_button.o_arrow_button_current:disabled:hover:after {
+    border-left-color: var(--met-accent);
+}
