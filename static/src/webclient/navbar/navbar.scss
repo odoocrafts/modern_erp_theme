@@ -1,0 +1,99 @@
+// Keep section and systray menus above the control panel. backdrop-filter
+// already makes the bar a stacking context, so a child z-index cannot escape it.
+.o_navbar {
+    position: relative;
+    z-index: 1000;
+}
+
+.o_main_navbar {
+    --Dropdown_menu-margin-y: 4px;
+    overflow: visible;
+
+    .o-dropdown--menu {
+        width: max-content;
+        min-width: 11rem;
+        max-width: 22rem;
+        background-color: var(--met-menu);
+        color: var(--met-ink);
+    }
+
+    .o-dropdown--menu .dropdown-item {
+        white-space: nowrap;
+        color: var(--met-ink);
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: var(--met-ink);
+            background: var(--met-hover);
+        }
+    }
+}
+
+.o_main_navbar .o_met_apps_toggle {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.15rem;
+
+    &:hover,
+    &:focus-visible {
+        background: var(--met-hover);
+        color: var(--met-accent);
+    }
+}
+
+.o_met_search_pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    height: 32px;
+    margin: 7px 8px 7px 12px;
+    padding: 0 14px;
+    border: 1px solid var(--met-line);
+    border-radius: 999px;
+    background: var(--met-pill);
+    color: var(--met-muted);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--met-ink);
+        border-color: rgba(0, 113, 227, 0.35);
+        box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.12);
+    }
+}
+
+.o_met_dark_toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 100%;
+    border: 0;
+    background: transparent;
+    color: var(--NavBar-entry-color, var(--met-ink));
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+        background: var(--met-hover);
+        color: var(--met-accent);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .o_met_search_label {
+        display: none;
+    }
+
+    .o_met_search_pill {
+        width: 32px;
+        padding: 0;
+        justify-content: center;
+        margin-left: 4px;
+    }
+}

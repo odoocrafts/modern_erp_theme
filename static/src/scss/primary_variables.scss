@@ -1,0 +1,19 @@
+// Prepended before web primary variables so later !default values keep these.
+// Do not override $o-border-radius here. Odoo's SCSS does unit math on it.
+
+$o-community-color: #0071e3;
+$o-enterprise-color: #0071e3;
+$o-brand-odoo: #0071e3;
+$o-brand-primary: #0071e3;
+
+$o-webclient-background-color: #f4f5f7;
+
+$o-navbar-background: #f4f5f7;
+$o-navbar-border-bottom: 1px solid rgba(29, 29, 31, 0.08);
+$o-navbar-entry-color: #1d1d1f;
+$o-navbar-entry-color--hover: #1d1d1f;
+$o-navbar-entry-color--active: #0071e3;
+$o-navbar-entry-bg--hover: rgba(29, 29, 31, 0.06);
+$o-navbar-entry-bg--active: rgba(0, 113, 227, 0.12);
+$o-navbar-brand-color: #1d1d1f;
+$o-navbar-badge-text-shadow: none;

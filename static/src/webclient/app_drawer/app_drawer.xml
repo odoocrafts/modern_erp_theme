@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="modern_erp_theme.AppDrawer">
+        <AppDrawerPanel t-if="appDrawer.isOpen" t-key="appDrawer.session"/>
+    </t>
+
+    <t t-name="modern_erp_theme.AppDrawerPanel">
+        <div class="o_met_overlay" t-ref="root" role="dialog" aria-modal="true" aria-label="Apps" tabindex="-1" t-on-click="onBackdropClick" t-on-keydown="onKeydown">
+            <div class="o_met_stage">
+                <div class="o_met_search">
+                    <i class="fa fa-search" aria-hidden="true"/>
+                    <input t-ref="search" type="text" placeholder="Search apps and menus" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="true" t-attf-aria-activedescendant="met-opt-{{ state.activeIndex }}" t-on-input="onInput"/>
+                    <button type="button" class="o_met_close" aria-label="Close" t-on-click="() => this.appDrawer.close()">
+                        <i class="fa fa-times" aria-hidden="true"/>
+                    </button>
+                </div>
+                <p class="o_met_hint">Arrow keys to move · Enter to open · Esc to close</p>
+
+                <t t-if="!query">
+                    <div class="o_met_grid" role="listbox" aria-label="Applications">
+                        <t t-if="!matchedApps.length">
+                            <p class="o_met_empty">No apps are installed.</p>
+                        </t>
+                        <button t-foreach="matchedApps" t-as="app" t-key="app.id" type="button" role="option" t-attf-id="met-opt-{{ app_index }}" t-att-aria-selected="state.activeIndex === app_index ? 'true' : 'false'" t-att-class="{ 'o_met_app': true, 'o_met_active': state.activeIndex === app_index }" t-on-click="() => this.select(app)">
+                            <img t-if="this.iconFor(app).src" class="o_met_icon" t-att-src="this.iconFor(app).src" alt=""/>
+                            <span t-else="" t-att-class="this.iconClass(app)" t-att-style="this.iconStyle(app)"/>
+                            <span class="o_met_app_name" t-esc="app.label"/>
+                        </button>
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="o_met_results" role="listbox" aria-label="Menu search">
+                        <t t-if="!flatEntries.length">
+                            <p class="o_met_empty">No menus found.</p>
+                        </t>
+                        <t t-if="matchedApps.length">
+                            <div class="o_met_section">Apps</div>
+                            <button t-foreach="matchedApps" t-as="app" t-key="app.id" type="button" role="option" t-attf-id="met-opt-{{ app_index }}" t-att-aria-selected="state.activeIndex === app_index ? 'true' : 'false'" t-att-class="{ 'o_met_result': true, 'o_met_active': state.activeIndex === app_index }" t-on-click="() => this.select(app)">
+                                <img t-if="this.iconFor(app).src" class="o_met_icon o_met_result_icon" t-att-src="this.iconFor(app).src" alt=""/>
+                                <span t-else="" t-att-class="this.iconClass(app) + ' o_met_result_icon'" t-att-style="this.iconStyle(app)"/>
+                                <span class="o_met_result_text">
+                                    <span class="o_met_result_title" t-esc="app.label"/>
+                                    <span class="o_met_result_path">Application</span>
+                                </span>
+                            </button>
+                        </t>
+                        <t t-if="matchedMenus.length">
+                            <div class="o_met_section">Menus</div>
+                            <button t-foreach="matchedMenus" t-as="menu" t-key="menu.id" type="button" role="option" t-attf-id="met-opt-{{ matchedApps.length + menu_index }}" t-att-aria-selected="state.activeIndex === (matchedApps.length + menu_index) ? 'true' : 'false'" t-att-class="{ 'o_met_result': true, 'o_met_active': state.activeIndex === (matchedApps.length + menu_index) }" t-on-click="() => this.select(menu)">
+                                <img t-if="this.iconFor(menu).src" class="o_met_icon o_met_result_icon" t-att-src="this.iconFor(menu).src" alt=""/>
+                                <span t-else="" t-att-class="this.iconClass(menu) + ' o_met_result_icon'" t-att-style="this.iconStyle(menu)"/>
+                                <span class="o_met_result_text">
+                                    <span class="o_met_result_title" t-esc="menu.label"/>
+                                    <span class="o_met_result_path" t-esc="menu.parents"/>
+                                </span>
+                            </button>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+
+</templates>

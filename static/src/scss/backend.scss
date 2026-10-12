@@ -1,0 +1,125 @@
+.o_web_client {
+    --met-ink: #1d1d1f;
+    --met-muted: #6e6e73;
+    --met-accent: #0071e3;
+    --met-canvas: #f4f5f7;
+    --met-glass: rgba(255, 255, 255, 0.78);
+    --met-glass-border: rgba(255, 255, 255, 0.62);
+    --met-scrim: rgba(22, 22, 24, 0.42);
+    --met-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+    --met-navbar: rgba(244, 245, 247, 0.82);
+    --met-navbar-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0 8px 24px rgba(15, 23, 42, 0.05);
+    --met-line: rgba(29, 29, 31, 0.08);
+    --met-pill: rgba(255, 255, 255, 0.72);
+    --met-menu: #ffffff;
+    --met-hover: rgba(0, 113, 227, 0.12);
+    --NavBar-entry-color: rgba(29, 29, 31, 0.88);
+    --NavBar-entry-color--hover: #1d1d1f;
+    --NavBar-brand-color: #1d1d1f;
+    background: var(--met-canvas);
+    color: var(--met-ink);
+    -webkit-font-smoothing: antialiased;
+}
+
+.o_main_navbar {
+    background: var(--met-navbar);
+    border-bottom: 1px solid var(--met-line);
+    backdrop-filter: saturate(1.6) blur(22px);
+    -webkit-backdrop-filter: saturate(1.6) blur(22px);
+    box-shadow: var(--met-navbar-shadow);
+}
+
+.o_control_panel {
+    background: var(--met-navbar);
+    border-bottom: 1px solid var(--met-line);
+    color: var(--met-ink);
+}
+
+.o_action_manager,
+.o_content,
+.o_form_view,
+.o_form_view .o_form_sheet_bg,
+.o_list_view,
+.o_kanban_view {
+    background: var(--met-canvas);
+    color: var(--met-ink);
+}
+
+.o_form_view .o_form_sheet_bg > .o_form_sheet,
+.o_list_renderer,
+.modal-content {
+    background: var(--met-menu);
+    color: var(--met-ink);
+}
+
+.o_form_view .o_form_sheet_bg > .o_form_sheet {
+    border: 1px solid var(--met-line);
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+.o_form_view .o_field_widget .o_input,
+.o_form_view .o_field_widget input.o_input,
+.o_form_view .o_field_widget textarea,
+.o_searchview,
+.o_searchview .o_searchview_input {
+    color: var(--met-ink);
+}
+
+.o_kanban_view .o_kanban_record:not(.o_kanban_ghost) {
+    background: var(--met-menu);
+    color: var(--met-ink);
+    border: 1px solid var(--met-line);
+    border-radius: 14px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.o_list_renderer {
+    border-radius: 12px;
+}
+
+.modal-content {
+    border: 0;
+    border-radius: 20px;
+    box-shadow: var(--met-shadow);
+}
+
+.dropdown-menu {
+    border: 1px solid var(--met-line);
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.dropdown-menu .dropdown-item {
+    border-radius: 8px;
+}
+
+.btn:not(.btn-link):not(.oe_stat_button) {
+    border-radius: 10px;
+}
+
+.btn-primary {
+    box-shadow: 0 1px 1px rgba(0, 113, 227, 0.2), 0 8px 16px rgba(0, 113, 227, 0.16);
+}
+
+.o_form_view .o_field_widget .o_input,
+.o_form_view .o_field_widget input.o_input,
+.modal .form-control {
+    border-radius: 8px;
+}
+
+body.o_met_drawer_open {
+    overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .o_met_overlay,
+    .o_met_app,
+    .o_met_result,
+    .o_met_search {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="modern_erp_theme.DarkModeToggle">
+        <button type="button" class="o_met_dark_toggle" t-on-click="toggle" t-att-title="dark ? 'Light mode' : 'Dark mode'" t-att-aria-label="dark ? 'Light mode' : 'Dark mode'" t-att-aria-pressed="dark ? 'true' : 'false'">
+            <i t-att-class="dark ? 'fa fa-sun-o' : 'fa fa-moon-o'" aria-hidden="true"/>
+        </button>
+    </t>
+
+</templates>

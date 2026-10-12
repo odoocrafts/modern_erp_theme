@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="modern_erp_theme.NavBar" t-inherit="web.NavBar" t-inherit-mode="extension">
+        <xpath expr="//t[@t-call='web.NavBar.AppsMenu']" position="replace">
+            <button type="button" class="o_nav_entry o_navbar_apps_menu o_met_apps_toggle" data-hotkey="h" title="Apps" aria-label="Apps" t-on-click="openAppDrawer">
+                <i class="oi oi-apps"/>
+            </button>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o_menu_systray')]" position="before">
+            <button type="button" class="o_met_search_pill" title="Search menus" aria-label="Search menus" t-on-click="openAppDrawer">
+                <i class="fa fa-search" aria-hidden="true"/>
+                <span class="o_met_search_label">Search menus</span>
+            </button>
+        </xpath>
+    </t>
+
+    <t t-name="modern_erp_theme.UserMenu" t-inherit="web.UserMenu" t-inherit-mode="extension">
+        <xpath expr="//Dropdown" position="attributes">
+            <attribute name="position">'bottom-end'</attribute>
+        </xpath>
+    </t>
+
+</templates>
