@@ -2,10 +2,14 @@
     'name': 'Modern ERP Theme',
     'summary': 'Frosted app drawer, global menu search, and a lighter backend',
     'description': """
+        Odoo 19 Community backend theme.
         Replaces the Community apps dropdown with a translucent app drawer
         and a global menu search. Refreshes navbar, surfaces, colors, and shadows.
+        Odoo 19 no longer reads the color_scheme cookie in the web client
+        template, so this module maps that cookie onto ir.http color_scheme
+        before web.assets_web_dark is included.
     """,
-    'version': '17.0.1.0.0',
+    'version': '19.0.1.0.0',
     'category': 'Themes/Backend',
     'license': 'LGPL-3',
     'depends': ['web'],
