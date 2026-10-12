@@ -2,10 +2,12 @@
     'name': 'Modern ERP Theme',
     'summary': 'Frosted app drawer, global menu search, and a lighter backend',
     'description': """
+        Odoo 18 Community backend theme.
         Replaces the Community apps dropdown with a translucent app drawer
         and a global menu search. Refreshes navbar, surfaces, colors, and shadows.
+        This version still chooses web.assets_web_dark from the color_scheme cookie.
     """,
-    'version': '17.0.1.0.0',
+    'version': '18.0.1.0.0',
     'category': 'Themes/Backend',
     'license': 'LGPL-3',
     'depends': ['web'],
